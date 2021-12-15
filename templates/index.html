@@ -1,0 +1,1179 @@
+<html lang="en">
+<head>
+    <title>World Elements</title>
+
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/common.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/footer.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/navigator.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/organizer.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/workspace.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/elements.css') }}">
+
+    <!-- gui scripts -->
+    <script src="{{url_for('static', filename='scripts/_resizers.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/_window_resize.js') }}"></script>
+
+    <!-- panel scripts -->
+    <script src="{{url_for('static', filename='scripts/common.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/navigator.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/organizer.js') }}"></script>
+
+    <!-- worlds scripts -->
+    <script src="{{url_for('static', filename='scripts/worlds/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/worlds/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/worlds/organizer/focus.js') }}"></script>
+
+    <!-- projects scripts -->
+    <script src="{{url_for('static', filename='scripts/projects/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/projects/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/projects/organizer/focus.js') }}"></script>
+
+    <!-- books scripts -->
+    <script src="{{url_for('static', filename='scripts/books/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/books/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/books/organizer/focus.js') }}"></script>
+
+    <!-- compose scripts -->
+    <script src="{{url_for('static', filename='scripts/compose/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/compose/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/compose/organizer/focus.js') }}"></script>
+
+    <!-- plotlines scripts -->
+    <script src="{{url_for('static', filename='scripts/plotlines/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/plotlines/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/plotlines/organizer/focus.js') }}"></script>
+
+    <!-- elements scripts -->
+    <script src="{{url_for('static', filename='scripts/elements/organizer/tooltip_popups.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/elements/organizer/tooltip_actions.js') }}"></script>
+    <script src="{{url_for('static', filename='scripts/elements/organizer/focus.js') }}"></script>
+
+    <!-- relationships scripts -->
+
+    <!-- settings scripts -->
+
+</head>
+<body>
+
+    <div class="flex full_width" id="header">
+        <div class="" id="page_title">World Elements - Working</div>
+    </div>
+
+    <div class="flex" id="panels">
+
+    <!-- ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+    <!-- │ NAVIGATOR                                                                                                            │ -->
+    <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+        <div class="flex full_height column" id="navigator">
+            <div class="flex navitem" id="nav_worlds" title="Worlds" onclick="showWorldsView()"><div class="nav_svg_worlds"></div></div>
+            <div class="flex navitem" id="nav_projects" title="Projects" onclick="showProjectsView()"><div class="nav_svg_projects"></div></div>
+            <div class="flex navitem" id="nav_books" title="Books" onclick="showBooksView()"><div class="nav_svg_books"></div></div>
+            <div class="flex navitem" id="nav_compose" title="Compose" onclick="showComposeView()"><div class="nav_svg_compose"></div></div>
+            <div class="flex navitem" id="nav_plotlines" title="Plotlines" onclick="showPlotlinesView()"><div class="nav_svg_plotlines"></div></div>
+            <div class="flex navitem" id="nav_elements" title="Elements" onclick="showElementsView()"><div class="nav_svg_elements"></div></div>
+            <div class="flex navitem" id="nav_relationships" title="Relationships" onclick="showRelationshipsView()"><div class="nav_svg_relationships"></div></div>
+            <div class="flex navitem" id="nav_settings" title="Settings" onclick="showSettingsView()"><div class="nav_svg_settings"></div></div>
+        </div>
+
+    <!-- ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+    <!-- │ ORGANIZER                                                                                                            │ -->
+    <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+        <div class="flex full_height column" id="organizer">
+        <!-- ┌─ WORLDS ─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_visible" id="org_wrapper_worlds">
+            <!-- ┌─ tooltips ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="org_tooltip hidden" id="org_worlds_tooltip">
+                    <!-- worlds organizer tooltip item -->
+                    <div class="flex column hidden" id="org_worlds_tooltip_wrapper_world_add">
+                        <div class="flex orgitem" id="org_worlds_tooltip_item_world_add" onclick="addWorldSectionWorlds()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_world_section"></div>
+                            <div class="flex org_content">Create New World</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="org_tooltip hidden" id="org_world_section_tooltip">
+                    <!-- worlds organizer tooltip item -->
+                    <div class="flex column hidden" id="org_worlds_tooltip_wrapper_world_section_add">
+                        <div class="flex orgitem" id="org_worlds_tooltip_item_world_section_add" onclick="addWorldSectionWorld()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_world_section"></div>
+                            <div class="flex org_content">Create New World</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                        <div class="flex column hidden" id="org_worlds_tooltip_wrapper_world_section_del">
+                            <div class="flex orgitem" id="org_worlds_tooltip_item_world_section_del" onclick="delWorldSection()">
+                                <div class="flex org_svg_del"></div>
+                                <div class="flex org_svg_world_section"></div>
+                                <div class="flex org_content">Delete World</div>
+                                <div class="flex org_spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_worlds">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_worlds" onclick="removeFocusWorldPage(this)"></div>
+                    <div class="flex org_content" id="org_item_worlds_content" onclick="removeFocusWorldPage(this)">Worlds</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipWorldsShow(this)" id="org_item_worlds_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ PROJECTS ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_visible" id="org_wrapper_projects">
+            <!-- ┌─ tooltips ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="org_tooltip hidden" id="org_projects_tooltip">
+                    <!-- projects organizer tooltip item -->
+                    <div class="flex column hidden" id="org_projects_tooltip_wrapper_project_add">
+                        <div class="flex orgitem" id="org_projects_tooltip_item_project_add" onclick="addProjectSectionProjects()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_project_section"></div>
+                            <div class="flex org_content">Create New Project</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="org_tooltip hidden" id="org_project_section_tooltip">
+                    <!-- projects organizer tooltip item -->
+                    <div class="flex column hidden" id="org_projects_tooltip_wrapper_project_section_add">
+                        <div class="flex orgitem" id="org_projects_tooltip_item_project_section_add" onclick="addProjectSectionProject()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_project_section"></div>
+                            <div class="flex org_content">Create New Project</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                        <div class="flex column hidden" id="org_projects_tooltip_wrapper_project_section_del">
+                            <div class="flex orgitem" id="org_projects_tooltip_item_project_section_del" onclick="delProjectSection()">
+                                <div class="flex org_svg_del"></div>
+                                <div class="flex org_svg_project_section"></div>
+                                <div class="flex org_content">Delete Project</div>
+                                <div class="flex org_spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_projects">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_projects" onclick="removeFocusProjectsPage(this)"></div>
+                    <div class="flex org_content" id="org_item_projects_content" onclick="removeFocusProjectsPage(this)">Projects</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipProjectsShow(this)" id="org_item_projects_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ BOOKS ──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_visible" id="org_wrapper_books">
+            <!-- ┌─ tooltips ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="org_tooltip hidden" id="org_books_tooltip">
+                    <!-- books organizer tooltip item -->
+                    <div class="flex column hidden" id="org_books_tooltip_wrapper_book_add">
+                        <div class="flex orgitem" id="org_books_tooltip_item_book_add" onclick="addBookSectionBooks()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_book_section"></div>
+                            <div class="flex org_content">Create New Book</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="org_tooltip hidden" id="org_book_section_tooltip">
+                    <!-- books organizer tooltip item -->
+                    <div class="flex column hidden" id="org_books_tooltip_wrapper_book_section_add">
+                        <div class="flex orgitem" id="org_books_tooltip_item_book_section_add" onclick="addBookSectionBook()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_book_section"></div>
+                            <div class="flex org_content">Create New Book</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                        <div class="flex column hidden" id="org_books_tooltip_wrapper_book_section_del">
+                            <div class="flex orgitem" id="org_books_tooltip_item_book_section_del" onclick="delBookSection()">
+                                <div class="flex org_svg_del"></div>
+                                <div class="flex org_svg_book_section"></div>
+                                <div class="flex org_content">Delete Book</div>
+                                <div class="flex org_spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_books">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick="removeFocusBooksPage(this)"></div>
+                    <div class="flex org_content" id="org_item_books_content" onclick="removeFocusBooksPage(this)">Books</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipBooksShow(this)" id="org_item_books_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ COMPOSE ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="org_wrapper_compose">
+            <!-- ┌─ front matter tooltips ──────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <!-- ── tooltip front matter ──────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_front_matter_tooltip">
+                    <!-- half title tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_half_title">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_half_title" onclick="addHalfTitleSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Half Title Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_half_title_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_half_title_del" onclick="delHalfTitleSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Half Title Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- title tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_title">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_title" onclick="addTitleSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Title Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_title_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_title_del" onclick="delTitleSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Title Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- other works tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_other_works">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_other_works" onclick="addOtherWorksSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Other Works Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_other_works_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_other_works_del" onclick="delOtherWorksSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Other Works Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- copyright tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_copyright">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_copyright" onclick="addCopyrightSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Copyright Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_copyright_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_copyright_del" onclick="delCopyrightSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Copyright Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- dedication tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_dedication">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_dedication" onclick="addDedicationSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Dedication Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_dedication_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_dedication_del" onclick="delDedicationSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Dedication Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- epigraph tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_epigraph">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_epigraph" onclick="addEpigraphSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Epigraph Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_epigraph_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_epigraph_del" onclick="delEpigraphSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Epigraph Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- table of contents tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_toc">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_toc" onclick="addTocSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add TOC Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_toc_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_toc_del" onclick="delTocSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete TOC Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- foreword tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_foreword">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_foreword" onclick="addForewordSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Foreword Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_foreword_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_foreword_del" onclick="delForewordSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Foreword Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- preface tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_preface">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_preface" onclick="addPrefaceSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Preface Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_preface_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_preface_del" onclick="delPrefaceSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Preface Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- acknowledgements tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_acknowledgements">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_acknowledgements" onclick="addAcknowledgementsSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Acknowledgements Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_acknowledgements_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_acknowledgements_del" onclick="delAcknowledgementsSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Acknowledgements Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- introduction tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_introduction">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_introduction" onclick="addIntroductionSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Introduction Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_introduction_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_introduction_del" onclick="delIntroductionSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Introduction Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- prologue tooltip item -->
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_prologue">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_prologue" onclick="addPrologueSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Prologue Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_front_matter_tooltip_wrapper_prologue_del">
+                        <div class="flex orgitem" id="org_front_matter_tooltip_item_prologue_del" onclick="delPrologueSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Prologue Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ body matter tooltips ───────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <!-- ── tooltip body matter ───────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip">
+                    <!-- add part/module tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_wrapper_part_module">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_item_part_module" onclick="addPartModule()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_book_open_dark"></div>
+                            <div class="flex org_content">Add Part/Module</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- add map tooltip item -->
+                <!-- <div class="flex column hidden" id="org_body_matter_tooltip_wrapper_map">
+                    <div class="flex orgitem" id="org_body_matter_tooltip_item_map">
+                        <div class="flex org_svg_add"></div>
+                        <div class="flex org_svg_page_lines_light"></div>
+                        <div class="flex org_content">Add Map</div>
+                        <div class="flex org_spacer"></div>
+                    </div>
+                </div> -->
+                <!-- ── tooltip body matter part module ───────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_part_module">
+                    <!-- delete part/module tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_del_part_module">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_del_part_module" onclick="delPartModule()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_book_open_dark"></div>
+                            <div class="flex org_content">Delete Part/Module</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter part add title -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_title">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_title" onclick="addPartModuleTitle(this)">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Part Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter part delete title -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_title_del">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_title_del" onclick="delPartModuleTitle(this)">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Part Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter part add epigraph -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_epigraph">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_epigraph" onclick="addPartModuleEpigraph(this)">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Part Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter part delete epigraph -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_epigraph_del">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_epigraph_del" onclick="delPartModuleEpigraph(this)">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Part Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- add chapter tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_chapter">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_chapter" onclick="addChapter(this)">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_chapter_dark"></div>
+                            <div class="flex org_content">Add Chapter</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- add map tooltip item -->
+                    <!-- <div class="flex column hidden" id="org_body_matter_tooltip_part_module_wrapper_map">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_module_item_map">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Map</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- ── tooltip body matter chapter ───────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_chapter">
+                    <!-- delete chapter tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_del_chapter">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_del_chapter" onclick="delChapter()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_chapter_dark"></div>
+                            <div class="flex org_content">Delete Chapter</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter chapter add title -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_title">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_title" onclick="addChapterTitle()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter chapter delete title -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_title_del">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_title_del" onclick="delChapterTitle()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter chapter add epigraph -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_epigraph">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_epigraph" onclick="addChapterEpigraph()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- body matter chapter delete epigraph -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_epigraph_del">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_epigraph_del" onclick="delChapterEpigraph()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- add section tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_wrapper_section">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_item_section" onclick="addChapterSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_filled_section_light"></div>
+                            <div class="flex org_content">Add Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip body matter chapter section ───────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_chapter_section">
+                    <!-- delete section tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_section_wrapper_del_section">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_section_item_del_section" onclick="delSectionChapter()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_filled_section_light"></div>
+                            <div class="flex org_content">Delete Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- add section tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_section_wrapper_section">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_section_item_section" onclick="addSectionChapter()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_filled_section_light"></div>
+                            <div class="flex org_content">Add Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip body matter part title ────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_part_title">
+                    <!-- delete title tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_title_wrapper_del_title">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_title_item_del_title" onclick="delTitlePartModule(this)">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip body matter part epigraph ─────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_part_epigraph">
+                    <!-- delete epigraph tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_part_epigraph_wrapper_del_epigraph">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_part_epigraph_item_del_epigraph" onclick="delEpigraphPartModule(this)">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip body matter chapter title ─────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_chapter_title">
+                    <!-- delete title tooltip item -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_title_wrapper_del_title">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_title_item_del_title" onclick="delTitleChapter()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Chapter Title</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip body matter chapter epigraph ──────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_body_matter_tooltip_chapter_epigraph">
+                    <!-- item delete chapter epigraph -->
+                    <div class="flex column hidden" id="org_body_matter_tooltip_chapter_epigraph_wrapper_del_epigraph">
+                        <div class="flex orgitem" id="org_body_matter_tooltip_chapter_epigraph_item_del_epigraph" onclick="delEpigraphChapter()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Epigraph</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ back matter tooltips ───────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <!-- ── tooltip back matter ───────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_back_matter_tooltip">
+                    <!-- item add epilogue -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_epilogue">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_epilogue" onclick="addEpilogueSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Epilogue Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete epilogue -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_epilogue_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_epilogue_del" onclick="delEpilogueSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Epilogue Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add afterword -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_afterword">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_afterword" onclick="addAfterwordSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Afterword Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete afterword -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_afterword_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_afterword_del" onclick="delAfterwordSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Afterword Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add appendix -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_appendix">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_appendix" onclick="addAppendixSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Appendix Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete appendix -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_appendix_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_appendix_del" onclick="delAppendixSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Appendix Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add glossary -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_glossary">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_glossary" onclick="addGlossarySection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Glossary Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete glossary -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_glossary_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_glossary_del" onclick="delGlossarySection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Glossary Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add bibliography -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_bibliography">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_bibliography" onclick="addBibliographySection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Bibliography Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete bibliography -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_bibliography_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_bibliography_del" onclick="delBibliographySection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Bibliography Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add author bio -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_authorbio">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_authorbio" onclick="addAuthorBioSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Author Bio Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete author bio -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_authorbio_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_authorbio_del" onclick="delAuthorBioSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Author Bio Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item add synopsis -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_synopsis">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_synopsis" onclick="addSynopsisSection()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Add Synopsis Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- item delete synopsis -->
+                    <div class="flex column hidden" id="org_back_matter_tooltip_wrapper_synopsis_del">
+                        <div class="flex orgitem" id="org_back_matter_tooltip_item_synopsis_del" onclick="delSynopsisSection()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_page_lines_light"></div>
+                            <div class="flex org_content">Delete Synopsis Section</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ compose content ────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_compose">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick="setFocusCompose(this)"></div>
+                    <div class="flex org_content" id="org_item_compose_content" onclick="setFocusCompose(this)">Compose</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="alert('composeSettingsTooltip()')"" id="org_item_compose_settings"></div>
+                </div>
+            <!-- ┌─ front matter content ───────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column" id="org_wrapper_front_matter">
+                    <div class="flex orgitem orgitem_lv2" id="org_item_front_matter">
+                        <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                        <div class="flex org_svg_book_dark" onclick="setFocusComposeFrontMatter(this)"></div>
+                        <div class="flex org_content" id="org_item_front_matter_content" onclick="setFocusComposeFrontMatter(this)">Front Matter</div>
+                        <div class="flex org_spacer"></div>
+                        <div class="flex org_svg_settings" onclick="orgTooltipFrontShow(this)" id="org_item_front_matter_settings"></div>
+                    </div>
+                </div>
+            <!-- ┌─ body matter content ────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column" id="org_wrapper_body_matter">
+                    <div class="flex orgitem orgitem_lv2" id="org_item_body_matter">
+                        <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                        <div class="flex org_svg_book_dark" onclick="setFocusComposeBodyMatter(this)"></div>
+                        <div class="flex org_content" id="org_item_body_matter_content" onclick="setFocusComposeBodyMatter(this)">Body Matter</div>
+                        <div class="flex org_spacer"></div>
+                        <div class="flex org_svg_settings" onclick="orgTooltipBodyShow(this)" id="org_item_body_matter_settings"></div>
+                    </div>
+                </div>
+            <!-- ┌─ back matter content ────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column" id="org_wrapper_back_matter">
+                    <div class="flex orgitem orgitem_lv2" id="org_item_back_matter">
+                        <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                        <div class="flex org_svg_book_dark" onclick="setFocusComposeBackMatter(this)"></div>
+                        <div class="flex org_content" id="org_item_back_matter_content" onclick="setFocusComposeBackMatter(this)">Back Matter</div>
+                        <div class="flex org_spacer"></div>
+                        <div class="flex org_svg_settings" onclick="orgTooltipBackShow(this)" id="org_item_back_matter_settings"></div>
+                    </div>
+                </div>
+            </div>
+        <!-- ┌─ PLOTLINES ──────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="org_wrapper_plotlines">
+            <!-- ┌─ tooltips ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <!-- ── tooltip plotlines ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plot_overview_add">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plot_overview_add" onclick="addPlotlinesPlotOverview()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Add Plot Overview</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_add">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_add" onclick="addPlotlinesPlotline()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Add Plotline</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip plot overview ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip_plot_overview">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plot_overview_del">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plot_overview_del" onclick="delPlotOverview()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Delete Plot Overview</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip plotline ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip_plotline">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_overview_add">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_overview_add" onclick="addPlotlineOverview()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Add Plotline Overview</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_plot_point_add">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_plot_point_add" onclick="addPlotlinePlotPoint()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Add Plot Point</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_event_add">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_event_add" onclick="addPlotlineEvent()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Add Event</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip plotline overview ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip_plotline_overview">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_overview_del">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_overview_del" onclick="delPlotlineOverview()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Delete Plotline Overview</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip plotline plot point ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip_plotline_plot_point">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_plot_point_del">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_plot_point_del" onclick="delPlotlinePlotPoint()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Delete Plot Point</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip plotline event ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_plotlines_tooltip_plotline_event">
+                    <!-- plotlines organizer tooltip item -->
+                    <div class="flex column hidden" id="org_plotlines_tooltip_wrapper_plotline_event_del">
+                        <div class="flex orgitem" id="org_plotlines_tooltip_item_plotline_event_del" onclick="delPlotlineEvent()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_plotlines_plotline"></div>
+                            <div class="flex org_content">Delete Event</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_plotlines">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick=""></div>
+                    <div class="flex org_content" id="org_item_plotlines_content" onclick="">Plotlines</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipPlotlinesShow(this)" id="org_item_plotlines_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ ELEMENTS ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="org_wrapper_elements">
+            <!-- ┌─ tooltips ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <!-- ── tooltip elements ──────────────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_elements_tooltip">
+                    <!-- elements organizer tooltip item -->
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_category_add">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_category_add" onclick="addElementsCategory()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Create New Category</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip elements category ─────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_elements_tooltip_category">
+                    <!-- elements organizer tooltips -->
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_category_del">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_category_del" onclick="delElementsCategory()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Delete Category</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_subcategory_add">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_subcategory_add" onclick="addElementsSubCategory()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Create New Subcategory</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_category_element_add">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_category_element_add" onclick="addElementsCategoryElement()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Add Element</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip elements subcategory ──────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_elements_tooltip_subcategory">
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_subcategory_del">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_subcategory_del" onclick="delElementsSubCategory()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Delete Subcategory</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_subcategory_element_add">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_subcategory_element_add" onclick="addElementsSubCategoryElement()">
+                            <div class="flex org_svg_add"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Add Element</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip elements category element ──────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_elements_tooltip_category_element">
+                    <!-- elements organizer tooltips -->
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_category_element_del">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_category_element_del" onclick="delElementsCategoryElement()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Delete Element</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ── tooltip elements subcategory element ──────────────────────────────────────────────────────────────────────────────────────────── -->
+                <div class="org_tooltip hidden" id="org_elements_tooltip_subcategory_element">
+                    <!-- elements organizer tooltips -->
+                    <div class="flex column hidden" id="org_elements_tooltip_wrapper_subcategory_element_del">
+                        <div class="flex orgitem" id="org_elements_tooltip_item_subcategory_element_del" onclick="delElementsSubCategoryElement()">
+                            <div class="flex org_svg_del"></div>
+                            <div class="flex org_svg_element_category"></div>
+                            <div class="flex org_content">Delete Element</div>
+                            <div class="flex org_spacer"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_elements">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick="setFocusElements(this)"></div>
+                    <div class="flex org_content" id="org_item_elements_content" onclick="setFocusElements(this)">Elements</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipElementsShow(this)" id="org_item_elements_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ RELATIONSHIPS ──────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="org_wrapper_relationships">
+            <!-- ┌─ tooltips ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_relationships">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick=""></div>
+                    <div class="flex org_content" id="org_item_relationships_content" onclick="">Relationships</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipBackShow(this)" id="org_item_relationships_settings"></div>
+                </div>
+            </div>
+        <!-- ┌─ SETTINGS ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="org_wrapper_settings">
+            <!-- ┌─ tooltips ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+            <!-- ┌─ content ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex orgitem orgitem_lv1" id="org_item_settings">
+                    <div class="flex org_svg_arrow_down" onclick="orgToggleCollapse(this)"></div>
+                    <div class="flex org_svg_book_dark" onclick=""></div>
+                    <div class="flex org_content" id="org_item_settings_content" onclick="">Settings</div>
+                    <div class="flex org_spacer"></div>
+                    <div class="flex org_svg_settings" onclick="orgTooltipBackShow(this)" id="org_item_settings_settings"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex full_height" id="resizer_left"></div>
+
+<!-- ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+<!-- │ WORKSPACE                                                                                                            │ -->
+<!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+        <div class="flex column" id="workspace">
+            <div class="flex column" id="wrapper">
+            <!-- ┌─ worlds ─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_visible" id="ws_wrapper_worlds">
+
+                </div>
+            <!-- ┌─ projects ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_projects">
+
+                </div>
+            <!-- ┌─ books ──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_books">
+
+                </div>
+            <!-- ┌─ compose ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_compose">
+                    <div class="flex column item_visible" id="ws_wrapper_front_matter"></div>
+                    <div class="flex column item_visible" id="ws_wrapper_body_matter"></div>
+                    <div class="flex column item_visible" id="ws_wrapper_back_matter"></div>
+                </div>
+            <!-- ┌─ plotlines ──────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_plotlines">
+
+                </div>
+            <!-- ┌─ elements ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_elements">
+
+                </div>
+            <!-- ┌─ relationships ──────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_relationships">
+
+                </div>
+            <!-- ┌─ settings ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+            <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+                <div class="flex column item_hidden" id="ws_wrapper_settings">
+
+                </div>
+
+                <!-- workspace spacer -->
+                <div class="flex column" id="ws_spacer"></div>
+            </div>
+        </div>
+
+        <div class="flex full_height" id="resizer_right"></div>
+
+    <!-- ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+    <!-- │ ELEMENTS                                                                                                             │ -->
+    <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+
+        <div class="flex full_height column" id="elements">
+        <!-- ┌─ worlds ─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_worlds">
+
+            </div>
+        <!-- ┌─ projects ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_projects">
+
+            </div>
+        <!-- ┌─ books ──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_books">
+
+            </div>
+        <!-- ┌─ compose ────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_compose">
+
+            </div>
+        <!-- ┌─ plotlines ──────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_plotlines">
+
+            </div>
+        <!-- ┌─ elements ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_elements">
+
+            </div>
+        <!-- ┌─ relationships ──────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_relationships">
+
+            </div>
+        <!-- ┌─ settings ───────────────────────────────────────────────────────────────────────────────────────────────────────────┐ -->
+        <!-- └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ -->
+            <div class="flex column item_hidden" id="el_wrapper_settings">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex full_width" id="footer"></div>
+
+</body>
+</html>

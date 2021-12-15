@@ -1,0 +1,88 @@
+/* Font Awesome Pro 6.0.0-beta1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) */
+:root {
+    --gui-border-color: #B0B0B0;
+    --gui-marginal-bg-color: #D0D0D0;
+    --gui-navitem-bg-color: #C0C0C0;
+    --gui-navitem-bg-color-hover: #B0B0B0;
+    --gui-navitem-border-color: #B0B0B0;
+    --gui-navitem-border-color-hover: #F0F0F0;
+    --gui-resource-bg-color: #F0F0F0;
+    --gui-workspace-bg-color: #C0C0C0;
+    --nav-svg-color: #202020;
+    --nav-svg-arrow-hover-color: #404040;
+    --org-svg-color: #909090;
+    --org-svg-color-hover: #404040;
+    --org-svg-arrow-color: #B0B0B0;
+    --org-item-color: #909090;
+    --org-item-color-hover: #707070;
+
+    --org-item-focus-bg-color: #B0E0E6;
+    --org-item-focus-bg-color-hover: #9dd6dd;
+
+    --org-item-bg-color: #E0E0E0;
+    --page-bg-color: #FFFAFA;
+    --page-border-color: #F0F0F0;
+    --page-min-width: 600px;
+    --page-min-height: 300px;
+    --page-padding-top: 85px;
+    --page-padding-left: 67px;
+    --page-padding-right: 67px;
+    --page-padding-bottom: 75px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full_width {
+    width: 100%;
+}
+
+.full_height {
+    height: 100%;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.item_visible {
+    visibility: visible;
+}
+
+.item_hidden {
+    /* visibility: hidden; */
+    /* overflow: hidden; */
+    /* height: 0px;
+    max-height: 0px;
+    margin: 0px;
+    padding: 0px; */
+    display: none;
+}
+
+.scrollable-element {
+    scrollbar-color: dark;
+}
+
+#panels {
+    position: absolute;
+    top: 32;
+    bottom: 32;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--gui-border-color);
+    border-bottom: 1px solid var(--gui-border-color);
+}

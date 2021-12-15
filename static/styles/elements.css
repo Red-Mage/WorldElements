@@ -1,0 +1,35 @@
+/* Font Awesome Pro 6.0.0-beta1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) */
+
+#elements {
+    align-items: stretch;
+    background-color: var(--gui-resource-bg-color);
+    width: 250px;
+    position: absolute;
+    right: 0;
+    border-left: 1px solid var(--gui-border-color);
+    overflow: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    z-index: 20;
+}
+
+#resizer_right {
+    width: 5px;
+    overflow: hidden;
+    background-color: var(--gui-workspace-bg-color);
+    position: absolute;
+    right: 250;
+    z-index: 30;
+}
+
+#resizer_right:hover {
+    cursor: ew-resize;
+}
+
+.hide_panel {
+    width: 0px;
+    max-width: 0px;
+    visibility: hidden;
+    position: absolute;
+    right: 0px;
+}

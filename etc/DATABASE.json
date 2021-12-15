@@ -1,0 +1,844 @@
+{
+    "db": {
+        "name": "we",
+        "user": "root",
+        "pass": "worldelements",
+        "host": "localhost",
+        "tables": [
+            {
+                "name": "we_settings",
+                "columns": [
+                    {
+                        "name":    "version_major",
+                        "datatype": "SMALLINT",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "version_minor",
+                        "datatype": "SMALLINT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "active_project",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "active_volume",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "version_major": "0",
+                        "version_minor": "0",
+                        "active_project": "00000000",
+                        "active_volume": "00000000"
+                    }
+                ]
+            },
+            {
+                "name": "we_worlds",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "name": "",
+                        "type": "",
+                        "synopsis": "",
+                        "description": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_projects",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "name": "",
+                        "synopsis": "",
+                        "description": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_volumes",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "title",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "subtitle",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "edition",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "world_ids",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "title": "",
+                        "subtitle": "",
+                        "edition": "",
+                        "synopsis": "",
+                        "description": "",
+                        "world_ids": "00000000",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_sections_front",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "elements",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "type": "",
+                        "name": "",
+                        "content": "",
+                        "elements": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_sections_back",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "elements",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "type": "",
+                        "name": "",
+                        "content": "",
+                        "elements": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_modules",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "type": "",
+                        "name": "",
+                        "content": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_chapters",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "module_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "module_id": "00000000",
+                        "type": "",
+                        "name": "",
+                        "content": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_sections",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "module_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "chapter_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "type",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "elements",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "plotpoints",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "module_id": "00000000",
+                        "chapter_id": "00000000",
+                        "type": "",
+                        "name": "",
+                        "content": "",
+                        "elements": "",
+                        "plotpoints": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_elements",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "world_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "category",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "properties",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "world_id": "00000000",
+                        "category": "00000000",
+                        "name": "",
+                        "synopsis": "",
+                        "description": "",
+                        "properties": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_element_category",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "name": "00000000",
+                        "synopsis": "",
+                        "description": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_plotlines",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "synopsis",
+                        "datatype": "VARCHAR(1024)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "name": "",
+                        "synopsis": "",
+                        "description": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_plotpoints",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "position",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "project_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "volume_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "plotline_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "year",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "month",
+                        "datatype": "VARCHAR(16)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "day",
+                        "datatype": "VARCHAR(16)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "hour",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "minute",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "season",
+                        "datatype": "VARCHAR(16)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "elements",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "name",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "content",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "position": "00000000",
+                        "project_id": "00000000",
+                        "volume_id": "00000000",
+                        "plotline_id": "00000000",
+                        "volume_id": "00000000",
+                        "year": "",
+                        "month": "",
+                        "day": "",
+                        "hour": "",
+                        "minute": "",
+                        "season": "",
+                        "elements": "",
+                        "name": "",
+                        "content": "",
+                        "deleted": "0"
+                    }
+                ]
+            },
+            {
+                "name": "we_relationships",
+                "columns": [
+                    {
+                        "name":    "id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "1"
+                    },
+                    {
+                        "name":    "world_id",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "direction",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "primary_element",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "relation_element",
+                        "datatype": "VARCHAR(8)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "relation_caption",
+                        "datatype": "VARCHAR(256)",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "description",
+                        "datatype": "TEXT",
+                        "primary": "0"
+                    },
+                    {
+                        "name":    "deleted",
+                        "datatype": "BOOLEAN",
+                        "primary": "0"
+                    }
+                ],
+                "rows": [
+                    {   
+                        "id": "00000000",
+                        "direction": "",
+                        "primary_element": "00000000",
+                        "relation_element": "00000000",
+                        "relation_caption": "",
+                        "description": "",
+                        "deleted": "0"
+                    }
+                ]
+            }
+        ]
+    }
+}

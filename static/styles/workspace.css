@@ -1,0 +1,65 @@
+/* Font Awesome Pro 6.0.0-beta1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) */
+
+#workspace {
+    background-color: var(--gui-workspace-bg-color);
+    overflow: auto;
+    scrollbar-width: thin;
+    z-index: 10;
+}
+
+#wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+#ws_spacer {
+    height: 10px;
+    min-height: 10px;
+    max-height: 10px;
+    flex-basis: auto;
+    visibility:hidden;
+}
+
+.page {
+    box-sizing: border-box;
+    max-width: var(--page-min-width);
+    min-width: var(--page-min-width);
+    min-height: var(--page-min-height);
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--page-padding-top);
+    padding-left: var(--page-padding-left);
+    padding-right: var(--page-padding-right);
+    padding-bottom: var(--page-padding-bottom);
+    background-color: var(--page-bg-color);
+    border: 1px solid var(--gui-border-color);
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    z-index: 30;
+}
+
+.world {
+    box-sizing: border-box;
+    max-width: var(--page-min-width);
+    min-width: var(--page-min-width);
+    min-height: var(--page-min-height);
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--page-padding-top);
+    padding-left: var(--page-padding-left);
+    padding-right: var(--page-padding-right);
+    padding-bottom: var(--page-padding-bottom);
+    background-color: var(--page-bg-color);
+    border: 1px solid var(--gui-border-color);
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.22);
+    z-index: 30;
+}

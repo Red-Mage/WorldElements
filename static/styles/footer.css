@@ -1,0 +1,12 @@
+/* Font Awesome Pro 6.0.0-beta1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) */
+
+#footer {
+    height: 32px;
+    background-color: var(--gui-marginal-bg-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.2), 0 -2px 6px 0 rgba(0, 0, 0, 0.18);
+    z-index: 90;
+}
