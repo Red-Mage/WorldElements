@@ -61,7 +61,7 @@ for t in database['tables']:
     except mysql.connector.Error as e:
         print(e)
 
-# populate tables with default database json data
+# populate tables with default database json data (creates text query based on supplied datatypes/values)
 
 for t in database['tables']:
     length = len(t['rows'])
