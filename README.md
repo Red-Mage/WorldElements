@@ -13,6 +13,7 @@ World Elements currently has the following menu bar items:
 - Compose
 - Plotlines
 - Elements
+- Relationships
 
 ## Worlds
 Worlds contain elements that can be referenced between multiple projects and books. They are basically the universe of your story.
@@ -53,8 +54,15 @@ Organization of elements. Elements can be characters, things, places, etc.
 # Relationships
 Relationships between elements, plotlines/points, or a combination of the two.
 
-## requirements
+
+
+## project stuff
 - python 3.8.0
+- pip 19.2.3
+  - pywebview
+  - Flask
+  - Flask-MySQL
+  - flask-cors
 - mysql 8.0.27
 
 ## footnote

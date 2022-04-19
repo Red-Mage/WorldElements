@@ -1,0 +1,174 @@
+https://webdamn.com/create-restful-api-using-python-mysql/
+
+
+X   GET     /api/settings                           // get all settings
+
+X   GET     /api/settings/major                     // get major version
+
+X   GET     /api/settings/minor                     // get minor version
+
+X   GET     /api/settings/project                   // get current active project
+X   PUT     /api/settings/project                   // set current active project
+
+X   GET     /api/settings/volume                    // set current active volume
+X   PUT     /api/settings/volume                    // gst current active volume
+
+X   GET     /api/worlds                             // get all worlds
+
+X   POST    /api/worlds                             // add new world
+X   GET     /api/worlds/<id>                        // get specified world
+X   PUT     /api/worlds/<id>                        // update world data
+X   DELETE  /api/worlds/<id>                        // delete specified world (set delete or delete if already set)
+
+X   GET     /api/projects                           // get all projects
+
+X   POST    /api/projects                           // add new project
+X   GET     /api/projects/<id>                      // get specified project
+X   PUT     /api/projects/<id>                      // update specified project
+X   DELETE  /api/projects/<id>                      // delete specified project (set delete or delete if already set)
+
+X   POST    /api/volumes                            // add new volume
+    GET     /api/volumes/<id>                       // get specified volume
+    PUT     /api/volumes/<id>                       // update specified volume
+    DELETE  /api/volumes/<id>                       // delete specified volume (set delete or delete if already set)
+
+    GET     /api/volumes/project/<id>               // get volumes from specified project
+    DELETE  /api/volumes/project/<id>               // delete all volumes from specified project (set delete or delete if already set)
+
+    POST    /api/sections/front                     // add new front section
+    GET     /api/sections/front/<id>                // get specified front section
+    PUT     /api/sections/front/<id>                // update specified front section
+    DELETE  /api/sections/front/<id>                // delete specified front section (set delete or delete if already set)
+
+    GET     /api/sections/front                     // get all front sections
+
+    GET     /api/sections/front/volume/<id>         // get back sections for specified volume
+    DELETE  /api/sections/front/volume/<id>         // delete back sections for specified volume (set delete or delete if already set)
+
+    GET     /api/sections/back                      // get all back sections
+
+    POST    /api/sections/back                      // add new back section
+    GET     /api/sections/back/<id>                 // get specified back section
+    PUT     /api/sections/back/<id>                 // update specified back section
+    DELETE  /api/sections/back/<id>                 // delete specified back section (set delete or delete if already set)
+
+    GET     /api/sections/back/volume/<id>          // get back sections for specified volume
+    DELETE  /api/sections/back/volume/<id>          // delete back sections for specified volume (set delete or delete if already set)
+
+    GET     /api/modules                            // get all modules
+
+    POST    /api/modules                            // add new module
+    GET     /api/modules/<id>                       // get specified module
+    PUT     /api/modules/<id>                       // update specified module
+    DELETE  /api/modules/<id>                       // delete specified module (set delete or delete if already set)
+
+    GET     /api/modules/volume/<id>                // get modules for specified volume
+    DELETE  /api/modules/volume/<id>                // delete modules for specified volume (set delete or delete if already set)
+
+    GET     /api/chapters                           // get all chapters
+
+    POST    /api/chapters                           // add new chapter
+    GET     /api/chapters/<id>                      // get specified chapter
+    PUT     /api/chapters/<id>                      // update specified chapter
+    DELETE  /api/chapters/<id>                      // delete specified module (set delete or delete if already set)
+
+    GET     /api/chapters/volume/<id>               // get chapters for specified volume
+    DELETE  /api/chapters/volume/<id>               // delete chapters for specified volume (set delete or delete if already set)
+
+    GET     /api/chapters/module/<id>               // get chapters for specified module
+    DELETE  /api/chapters/module/<id>               // delete chapters for specified module (set delete or delete if already set)
+
+    GET     /api/sections                           // get all sections
+
+    POST    /api/sections                           // add new section
+    GET     /api/sections/<id>                      // get specified section
+    PUT     /api/sections/<id>                      // update specified section
+    DELETE  /api/sections/<id>                      // delete specified section (set delete or delete if already set)
+
+    GET     /api/sections/volume/<id>               // get sections for specified volume
+    DELETE  /api/sections/volume/<id>               // delete sections for specified volume (set delete or delete if already set)
+
+    GET     /api/sections/module/<id>               // get sections for specified module
+    DELETE  /api/sections/module/<id>               // delete sections for specified module (set delete or delete if already set)
+
+    GET     /api/sections/chapter/<id>              // get sections for specified chapter
+    DELETE  /api/sections/chapter/<id>              // delete sections for specified chapter (set delete or delete if already set)
+
+    GET     /api/elements                           // get all elements
+
+    POST    /api/elements                           // add new element
+    GET     /api/elements/<id>                      // get specified element
+    PUT     /api/elements/<id>                      // update specified element
+    DELETE  /api/elements/<id>                      // delete specified element (set delete or delete if already set)
+
+    GET     /api/elements/world/<id>                // get elements for specified world
+    DELETE  /api/elements/world/<id>                // delete elements for specified world (set delete or delete if already set)
+
+    POST    /api/elements/category                  // add new element category
+    GET     /api/elements/category/<id>             // get specified element category
+    PUT     /api/elements/category/<id>             // update specified element category
+    DELETE  /api/elements/category/<id>             // delete specified element category (set delete or delete if already set)
+
+    GET     /api/plotlines                          // get all plotlines
+
+    POST    /api/plotlines                          // add new plotline
+    GET     /api/plotlines/<id>                     // get specified plotline
+    PUT     /api/plotlines/<id>                     // update specified plotline
+    DELETE  /api/plotlines/<id>                     // delete specified plotline (set delete or delete if already set)
+
+    GET     /api/plotlines/project/<id>             // get plotlines for specified project
+    DELETE  /api/plotlines/project/<id>             // delete plotlines for specified project (set delete or delete if already set)
+
+    GET     /api/plotpoints                         // get all plotpoints
+
+    POST    /api/plotpoints                         // add new plotpoint   
+    GET     /api/plotpoints/<id>                    // get specified plotpoint
+    PUT     /api/plotpoints/<id>                    // update specified plotpoint
+    DELETE  /api/plotpoints/<id>                    // delete specified plotpoint (set delete or delete if already set)
+
+    GET     /api/plotpoints/plotline/<id>           // get plotpoints for specified plotline
+    DELETE  /api/plotpoints/plotline/<id>           // delete plotlines for specified
+
+    GET     /api/relationships                      // get all relationships
+
+    POST    /api/relationships                      // add new relationship
+    GET     /api/relationships/<id>                 // get specified relationship
+    PUT     /api/relationships/<id>                 // update specified relationship
+    DELETE  /api/relationships/<id>                 // delete specified relationship (set delete or delete if already set)
+
+    GET     /api/relationships/world/<id>           // get relationships for specified world
+    DELETE  /api/relationships/world/<id>           // delete relationships for specified world (set delete or delete if already set)
+
+    GET     /api/relationships/element/<id>         // get relationships for specified element
+    DELETE  /api/relationships/element/<id>         // delete relationships for specified element
+
+    POST    /api/
+    GET     /api/
+    PUT     /api/
+    DELETE  /api/
+
+    POST    /api/
+    GET     /api/
+    PUT     /api/
+    DELETE  /api/
+
+    POST    /api/
+    GET     /api/
+    PUT     /api/
+    DELETE  /api/
+
+    POST    /api/
+    GET     /api/
+    PUT     /api/
+    DELETE  /api/
+
+
+
+
+CREATE TABLE `categories` (
+  `category_id` int(11) AUTO_INCREMENT,
+  `category_name` varchar(150) DEFAULT NULL,
+  `remarks` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`category_id`)
+);
+
